@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Titulo Documento</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'plantillas/style.css' %}">  
+    </head>
+    <body>
+        <p>Hola que tal estas</p>
+        <p>oops</p>
+        {% if latest_question_list %}
+        <ul>
+        {% for plantillas in latest_question_list %}
+            <li><a href="{% url 'plantillas:detail' plantillas.id %}">{{ plantillas.nombre }}</a></li>
+        {% endfor %}
+        </ul>
+        {% else %}
+            <p>No polls are available.</p>
+        {% endif %}
+    </body>
+</html>

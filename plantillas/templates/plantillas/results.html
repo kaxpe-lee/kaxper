@@ -1,0 +1,9 @@
+<h1>{{ question.nombre }}</h1>
+
+<ul>
+
+    <li>- {{ question.tipo }}</li>
+
+</ul>
+
+<a href="{% url 'plantillas:detail' question.id %}">Volver a modificar</a>

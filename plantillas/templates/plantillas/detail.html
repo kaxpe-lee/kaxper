@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Titulo Documento</title>
+    </head>
+    <body>
+        <form action="{% url 'plantillas:vote' question.id %}" method="post">
+            {% csrf_token %}
+            <fieldset>
+                <legend><h1>{{ question.nombre }}</h1></legend>
+                {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+                
+                    <input type="input" name="tipo" id="tipo" value="{{ question.tipo }}">
+                    <label for="tipo">Tipo: </label><br>
+                
+            </fieldset>
+            <input type="submit" value="Vote">
+        </form>
+    </body>
+</html>
